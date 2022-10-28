@@ -117,6 +117,11 @@ int main(int argc, char const *argv[])
 
     /* prepare files */
     ifl = fopen(ifl_name, "rt");
+    if (! ifl)
+    {
+        fprintf(stderr, "Error! File \"%s\" does not exist or cannot be read.\n", ifl_name);
+        exit(EXIT_FAILURE);
+    }
     ofl = fopen("RelaxedScanSplit.xyz", "rt");
     if (ofl)
     {
