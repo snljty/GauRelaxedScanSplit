@@ -141,6 +141,7 @@ int main(int argc, char const *argv[])
         }
     }
     sscanf(strstr(buf, "NAtoms=") + strlen("NAtoms="), "%d", & num_atoms);
+    rewind(ifl);
     while (fgets(buf, BUFSIZ, ifl))
     {
         if (strstr(buf, "Optimization completed"))
